@@ -9,11 +9,15 @@ async function getHoroscope() {
     textField.innerText = "Consulting the constellations...";
 
     try {
-        const response = await fetch(`https://ohmanda.com/api/horoscope/${sign}`);
+        // Using a different endpoint that supports CORS
+        const response = await fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=today`);
         const data = await response.json();
+        
         signTitle.innerText = sign.toUpperCase();
-        textField.innerText = data.horoscope;
+        // The data structure is slightly different for this API
+        textField.innerText = data.data.horoscope_data; 
     } catch (error) {
+        console.error("Error:", error);
         textField.innerText = "The cosmic signals are weak. Check your internet connection!";
     }
 }
