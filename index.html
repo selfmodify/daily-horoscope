@@ -57,4 +57,35 @@
                         <option value="Taurus">Taurus</option><option value="Gemini">Gemini</option>
                         <option value="Cancer">Cancer</option><option value="Virgo">Virgo</option>
                         <option value="Libra">Libra</option><option value="Scorpio">Scorpio</option>
-                        <option value="Sagittarius">Sagittarius</option><option value
+                        <option value="Sagittarius">Sagittarius</option><option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option><option value="Pisces">Pisces</option>
+                    </select>
+                </div>
+                <button class="secondary-btn" onclick="checkCompatibility()">Check Bond</button>
+                <p id="comp-result" class="small-text"></p>
+            </section>
+
+            <section class="glass-card">
+                <h3>🍀 Lucky Aura</h3>
+                <button class="secondary-btn" onclick="generateLuckyNumbers()">Get Numbers</button>
+                <div id="numbers-display" class="lucky-numbers"></div>
+            </section>
+        </div>
+
+        <section class="glass-card tarot-section">
+            <h3>🃏 Daily Tarot Guidance</h3>
+            <button class="primary-btn" id="tarot-btn" onclick="drawTarotCard()">Draw a Card</button>
+            <div id="tarot-result" class="hidden">
+                <h4 id="card-name" class="gold-text"></h4>
+                <p id="card-meaning"></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Stellar Insights. All fortunes are for entertainment.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
