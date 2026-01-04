@@ -1,47 +1,78 @@
+:root {
+    --primary: #e94560;
+    --gold: #f1c40f;
+    --bg-dark: #0f3460;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
 body {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #020205 100%);
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+}
+
+.stars-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .container {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px 0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
+}
+
+h1, h2, h3, .gold-text {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .grid-row { grid-template-columns: 1fr; }
 }
 
 select, button {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
     border: none;
-    margin: 10px;
+    margin: 10px 5px;
     font-size: 1rem;
+    outline: none;
 }
 
-button {
-    background-color: #e94560;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
+select { background: #16213e; color: white; cursor: pointer; }
 
-button:hover {
-    background-color: #ff2e63;
-}
-
-#horoscope-card {
-    margin-top: 20px;
-    padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+.primary-btn { background: var(--primary); color: white; cursor: pointer; font-weight: bold; }
+.secondary-btn { background: transparent; border: 1px solid var(--primary); color: white; cursor: pointer; }
 
 .hidden { display: none; }
+
+.result-area { margin-top: 20px; line-height: 1.6; }
+.lucky-numbers { font-size: 1.5rem; font-weight: bold; margin-top: 10px; color: var(--gold); }
+.small-text { font-style: italic; margin-top: 10px; }
